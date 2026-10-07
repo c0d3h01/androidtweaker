@@ -1,0 +1,10 @@
+# Superpowers working docs — local only, never committed
+docs/superpowers/
+.superpowers/
+
+# Agent / tool scratch — local only, never committed
+.opencode/
+.claude/
+.claude.json
+.worktrees/
+*.worktree
