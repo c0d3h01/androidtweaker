@@ -25,12 +25,12 @@ The module watches the profile you select and applies a matching set of kernel t
 
 ## Profiles
 
-| Profile | What it does | Use it when |
-|---|---|---|
-| **Battery** | Lowers max speeds, enables battery saver, calms background activity | You need the longest screen-on time |
-| **Balanced** | Stock-like speeds with smoother scheduling (default) | Everyday use |
-| **Performance** | Locks speeds to maximum, sharpens responsiveness | Heavy multitasking, benchmarks |
-| **Gaming** | Maximum speeds plus touch boost and aggressive graphics settings | Gaming sessions |
+| Profile         | What it does                                                        | Use it when                         |
+| --------------- | ------------------------------------------------------------------- | ----------------------------------- |
+| **Battery**     | Lowers max speeds, enables battery saver, calms background activity | You need the longest screen-on time |
+| **Balanced**    | Stock-like speeds with smoother scheduling (default)                | Everyday use                        |
+| **Performance** | Locks speeds to maximum, sharpens responsiveness                    | Heavy multitasking, benchmarks      |
+| **Gaming**      | Maximum speeds plus touch boost and aggressive graphics settings    | Gaming sessions                     |
 
 Performance and Gaming keep clocks high, so expect more heat and faster battery drain while they are active. Switch back to Balanced or Battery afterwards.
 
