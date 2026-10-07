@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prof_battery">Battery</string>
+    <string name="prof_balanced">Balanced</string>
+    <string name="prof_performance">Performance</string>
+    <string name="prof_gaming">Gaming</string>
+    <string name="pdesc_battery">Lowers max speeds, calms background activity. Longest screen-on time.</string>
+    <string name="pdesc_balanced">Stock-like speeds with smoother scheduling. Everyday use.</string>
+    <string name="pdesc_performance">Locks speeds high, sharpens responsiveness. Heavy multitasking.</string>
+    <string name="pdesc_gaming">Maximum speeds plus touch boost. Gaming sessions.</string>
+    <string name="noroot">Root access denied, please give superuser permission to the app and try again.</string>
+    <string name="nospec">Please Make Sure You Flashed Latest Module Version!</string>
+    <string name="unknown">Unknown</string>
+</resources>
