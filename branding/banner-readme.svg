@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40,0 H0 V40" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="640" fill="#0C0E10"/>
+  <rect width="1600" height="640" fill="url(#grid)"/>
+  <g transform="translate(110,80) scale(0.9375)">
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#F4F5F2" stroke-width="40"/>
+    <g stroke="#BFFF3C" stroke-width="26" stroke-linecap="round">
+      <line x1="131.5" y1="131.5" x2="111.8" y2="111.8"/>
+      <line x1="210.4" y1="86" x2="203.2" y2="59"/>
+      <line x1="301.6" y1="86" x2="308.8" y2="59"/>
+      <line x1="380.5" y1="131.5" x2="400.2" y2="111.8"/>
+    </g>
+    <path d="M287.1,140.1 L269.5,259.6 L242.5,252.4 Z" fill="#BFFF3C"/>
+    <circle cx="256" cy="256" r="28" fill="#BFFF3C"/>
+  </g>
+  <text x="680" y="290" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="bold" font-size="72" letter-spacing="10" fill="#F4F5F2">ANDROIDTWEAKER</text>
+  <text x="682" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="26" letter-spacing="14" fill="#8A94A0">TUNE IT YOUR WAY</text>
+  <rect x="682" y="382" width="64" height="6" fill="#BFFF3C"/>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="20" letter-spacing="3" text-anchor="middle">
+    <rect x="682" y="420" width="150" height="56" rx="28" fill="none" stroke="#3A4148" stroke-width="2"/>
+    <text x="757" y="455" fill="#8A94A0">BATTERY</text>
+    <rect x="844" y="420" width="160" height="56" rx="28" fill="#BFFF3C"/>
+    <text x="924" y="455" fill="#0C0E10" font-weight="bold">BALANCED</text>
+    <rect x="1016" y="420" width="220" height="56" rx="28" fill="none" stroke="#3A4148" stroke-width="2"/>
+    <text x="1126" y="455" fill="#8A94A0">PERFORMANCE</text>
+    <rect x="1248" y="420" width="140" height="56" rx="28" fill="none" stroke="#3A4148" stroke-width="2"/>
+    <text x="1318" y="455" fill="#8A94A0">GAMING</text>
+  </g>
+</svg>

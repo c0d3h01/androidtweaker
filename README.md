@@ -1,5 +1,7 @@
 # Android Tweaker
 
+![AndroidTweaker — Tune it your way](branding/banner-readme.svg)
+
 <a href="https://t.me/c0d3h01prjkts"><img src="https://img.shields.io/badge/Telegram-Channel-blue?logo=telegram&style=social"></a>
 
 Android Tweaker tunes your device's CPU, GPU, memory and scheduler settings automatically to match how you use your phone. Pick a profile once in the companion app — the module applies it at boot and every time you switch.
