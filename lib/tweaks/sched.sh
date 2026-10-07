@@ -4,7 +4,7 @@
 # SCHED_AUTOGROUP, SCHED_RAND_READ, SCHED_RAND_WRITE, SCHED_RESEED,
 # SCHED_TUNABLE_SCALING, SCHED_LATENCY, SCHED_MIN_GRAN, SCHED_WAKEUP_GRAN,
 # SCHED_MIGRATION_COST, SCHED_COLOCATION, SCHED_NR_MIGRATE, SCHED_STATS,
-# SCHED_SYNC_HINT, SCHED_USER_HINT, SCHED_FEATURES list; optional
+# SCHED_SYNC_HINT, SCHED_USER_HINT, SCHED_GENTLE, SCHED_FEATURES list; optional
 # SCHED_CONSERVATIVE_PL for performance-class profiles).
 
 apply_sched() {
@@ -33,6 +33,9 @@ apply_sched() {
   write "$_S/proc/sys/kernel/sched_user_hint" "$SCHED_USER_HINT"
   if [ -n "${SCHED_CONSERVATIVE_PL:-}" ]; then
     write "$_S/proc/sys/kernel/sched_conservative_pl" "$SCHED_CONSERVATIVE_PL"
+  fi
+  if [ -e "$_S/sys/kernel/sched/gentle_fair_sleepers" ]; then
+    write "$_S/sys/kernel/sched/gentle_fair_sleepers" "$SCHED_GENTLE"
   fi
   write "$_S/proc/sys/kernel/printk_devkmsg" "off"
 }
