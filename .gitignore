@@ -8,3 +8,28 @@ docs/superpowers/
 .claude.json
 .worktrees/
 *.worktree
+
+# Android / Gradle build outputs — local only, never committed
+.gradle/
+**/build/
+local.properties
+captures/
+.externalNativeBuild/
+*.apk
+*.aab
+*.ap_
+*.hprof
+*.jks
+*.keystore
+# Shared dev signing key + release APK are intentionally committed
+# so any developer can build an installable release. Guard this repo:
+# anyone with read access can ship updates as this app.
+!app/release.keystore
+!app/release/androidtweaker.apk
+
+# Android Studio / IntelliJ — local only, never committed
+.idea/
+*.iml
+
+# macOS — local only, never committed
+.DS_Store
