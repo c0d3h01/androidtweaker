@@ -21,5 +21,5 @@ if [ -f "$MODDIR/AndroidTweaker.apk" ]; then
     rm -f "$MODDIR/AndroidTweaker.apk"
 fi
 
-"$MODDIR/system/bin/ATweaker" >/dev/null 2>&1
+sh "$MODDIR/system/bin/Tweaks.sh" daemon >/dev/null 2>&1
 exit 0
