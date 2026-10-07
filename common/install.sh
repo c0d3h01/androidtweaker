@@ -18,22 +18,16 @@ installation() {
   ui_print "*******************************************"
   ui_print ""
   ui_print "[*] version: $version"
-  ui_print "[*] Developed by @c0d3h01 - GitHub"
+  ui_print "[*] Developed by @c0d3h01 - Find me on GitHub"
   ui_print ""
   ui_print "[*] Gives a superpower to your device's performance"
   ui_print "[*] Bug reports: https://github.com/c0d3h01/AndroidTweaker/issues"
   ui_print ""
 
-  if [ "$IS64BIT" = true ]; then
-    tar -xf "$MODPATH/injector2.tar.xz" -C "$MODPATH"
-  else
-    tar -xf "$MODPATH/injector1.tar.xz" -C "$MODPATH"
+  if [ ! -f "$bin_path/Tweaks.sh" ]; then
+    abort "! Tweaks.sh missing! Aborting!"
   fi
-
-  ui_print "- Injecting Components..."
-  mkdir -p "$bin_path"
-  mv -f "$MODPATH/injector/ATweaker" "$bin_path/ATweaker"
-  ui_print "- Injector Successfully Injected ✓"
+  ui_print "- Tweaks script ready ✓"
   ui_print ""
 
   # Safely update module.prop description with dynamic device name
@@ -57,7 +51,7 @@ installation() {
   # Launch Telegram channel if installing from booted Android (not recovery)
   if [ "$BOOTMODE" = true ]; then
     ui_print "[*] Telegram Channel: @c0d3h01prjts (Official)"
-    ui_print "[*] GitHub: https://github.com/c0d3h01/AndroidTweaker"
+    ui_print "[*] GitHub: https://github.com/c0d3h01/androidtweaker"
     ui_print "[*] Star this repository if you like the project :)"
     ui_print ""
   fi

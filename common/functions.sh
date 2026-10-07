@@ -1,12 +1,9 @@
-#
-# MMT Extended Utility Functions
-#
+# ------------------------------------------------------
+# MMT Extended Utility Functions & Modified by @c0d3h01 
+# ------------------------------------------------------
 
 cleanup() {
   rm -rf $MODPATH/common 2>/dev/null
-  rm -rf $MODPATH/injector 2>/dev/null
-  rm -rf $MODPATH/injector1.tar.xz 2>/dev/null
-  rm -rf $MODPATH/injector2.tar.xz 2>/dev/null
   rm -rf $MODPATH/CHANGELOG.md 2>/dev/null
   rm -rf $MODPATH/LICENSE 2>/dev/null
 }
