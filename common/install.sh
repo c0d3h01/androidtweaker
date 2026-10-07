@@ -34,8 +34,6 @@ installation() {
   sed -i "s/^description=.*/description=$note/" "$MODPATH/module.prop"
 
   ui_print "- Installing AndroidTweaker App..."
-  mv -f "$MODPATH/application/AndroidTweaker.apk" "$MODPATH/AndroidTweaker.apk"
-  rm -rf "$MODPATH/application"
 
   if [ "$BOOTMODE" = true ]; then
     if pm install -r -g "$MODPATH/AndroidTweaker.apk" >/dev/null 2>&1; then

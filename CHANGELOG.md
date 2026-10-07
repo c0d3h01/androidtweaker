@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2026-10-07
+
+### Added
+
+- New companion app (`com.c0d3h01.androidtweaker`): 4 profile cards, root status, module log viewer. Replaces legacy `beastmode.profile`, auto-removed on upgrade.
+- Brand assets (`branding/`): logo, README banner, adaptive launcher icon.
+- `Makefile` dev shortcuts (`test`, `release`, `pack`, `check`, `doctor`).
+
+### Changed
+
+- **Breaking:** profile codes shifted to 1=battery, 2=balanced, 3=performance, 4=gaming (was 2-5 with 1 as no-op). A stale stored value falls back to balanced once, then corrects on next tap.
+- Install flow optimized: dev-only sources pruned right after extraction (install loops never scan them); `service.sh` fast-paths boot when there is nothing to install and gates the legacy-package scan behind a sentinel file instead of every boot.
+
 ## [1.5.0] - 2026-06-14
 
 ### Changed

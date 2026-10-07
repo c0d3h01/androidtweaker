@@ -1,8 +1,8 @@
 id=android_tweaker
 name=AndroidTweaker
-version=v1.5.0
-versionCode=150
-author=@c0d3h01 (GitHub)
+version=v1.6.0
+versionCode=160
+author=c0d3h01
 description=
-companionPkg=beastmode.profile
+companionPkg=com.c0d3h01.androidtweaker
 updateJson=https://raw.githubusercontent.com/c0d3h01/AndroidTweaker/main/update.json

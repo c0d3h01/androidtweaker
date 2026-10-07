@@ -1,11 +1,19 @@
 # ------------------------------------------------------
-# MMT Extended Utility Functions & Modified by @c0d3h01 
+# MMT Extended Utility Functions & Modified by @c0d3h01
 # ------------------------------------------------------
 
 cleanup() {
+  prune_dev
   rm -rf $MODPATH/common 2>/dev/null
   rm -rf $MODPATH/CHANGELOG.md 2>/dev/null
   rm -rf $MODPATH/LICENSE 2>/dev/null
+}
+
+# Dev-only sources: never ship on device (defense in depth; the
+# release zip should exclude these too).
+prune_dev() {
+  rm -rf $MODPATH/app $MODPATH/gradle $MODPATH/docs $MODPATH/branding $MODPATH/.github 2>/dev/null
+  rm -f $MODPATH/settings.gradle.kts $MODPATH/build.gradle.kts $MODPATH/gradle.properties $MODPATH/Makefile 2>/dev/null
 }
 
 abort() {
@@ -174,6 +182,9 @@ fi
 ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" -x 'META-INF/*' 'common/functions.sh' -d $MODPATH >&2
 [ -f "$MODPATH/common/addon.tar.xz" ] && tar -xf $MODPATH/common/addon.tar.xz -C $MODPATH/common 2>/dev/null
+
+# Prune dev-only sources early so the install loops below never scan them
+prune_dev
 
 # Run addons
 if [ "$(ls -A $MODPATH/common/addon/*/install.sh 2>/dev/null)" ]; then
