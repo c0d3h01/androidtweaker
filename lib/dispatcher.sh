@@ -66,7 +66,7 @@ apply)
   do_apply "$2"
   ;;
 daemon)
-  exec "$MODDIR/lib/daemon.sh"
+  exec sh "$MODDIR/lib/daemon.sh"
   ;;
 misc)
   apply_misc

@@ -7,4 +7,4 @@ else
   MODDIR=$(cd "${0%/*}/../.." 2>/dev/null && pwd -P)
 fi
 export MODDIR
-exec "$MODDIR/lib/dispatcher.sh" "$@"
+exec sh "$MODDIR/lib/dispatcher.sh" "$@"
