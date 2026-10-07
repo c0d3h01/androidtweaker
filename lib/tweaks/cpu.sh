@@ -30,7 +30,9 @@ apply_cpu() {
       write "${_cpu}interactive/use_migration_notif" "$CPU_INT_MIGRATION"
       write "${_cpu}interactive/ignore_hispeed_on_notif" "$CPU_INT_IGNORE_HISPEED"
       write "${_cpu}interactive/use_sched_load" "$CPU_INT_SCHED_LOAD"
-      write "${_cpu}interactive/boostpulse" "$CPU_INT_BOOSTPULSE"
+      if [ -n "${CPU_INT_BOOSTPULSE:-}" ]; then
+        write "${_cpu}interactive/boostpulse" "$CPU_INT_BOOSTPULSE"
+      fi
       write "${_cpu}interactive/fastlane" "$CPU_INT_FASTLANE"
       write "${_cpu}interactive/fast_ramp_down" "$CPU_INT_FAST_RAMP_DOWN"
       write "${_cpu}interactive/sampling_rate" "$CPU_INT_SAMPLING"
@@ -42,13 +44,22 @@ apply_cpu() {
     esac
   done
 
-  if [ -n "${CPU_BOOST_MS:-}" ] && [ -d "$_S/sys/module/cpu_boost" ]; then
-    write "$_S/sys/module/cpu_boost/parameters/input_boost_freq" "$CPU_IBOOST_FREQ"
-    write "$_S/sys/module/cpu_boost/parameters/input_boost_ms" "$CPU_BOOST_MS"
-  elif [ -n "${CPU_IBOOST_DUR:-}" ] && [ -d "$_S/sys/module/cpu_input_boost" ]; then
-    write "$_S/sys/module/cpu_input_boost/parameters/input_boost_duration" "$CPU_IBOOST_DUR"
-    write "$_S/sys/module/cpu_input_boost/parameters/input_boost_freq_hp" "$CPU_IBOOST_FREQ"
-    write "$_S/sys/module/cpu_input_boost/parameters/input_boost_freq_lp" "$CPU_IBOOST_FREQ"
+  if [ -d "$_S/sys/module/cpu_boost" ]; then
+    if [ -n "${CPU_BOOST_FREQ:-}" ]; then
+      write "$_S/sys/module/cpu_boost/parameters/input_boost_freq" "$CPU_BOOST_FREQ"
+    fi
+    if [ -n "${CPU_BOOST_MS:-}" ]; then
+      write "$_S/sys/module/cpu_boost/parameters/input_boost_ms" "$CPU_BOOST_MS"
+    fi
+  fi
+  if [ -d "$_S/sys/module/cpu_input_boost" ]; then
+    if [ -n "${CPU_IBOOST_DUR:-}" ]; then
+      write "$_S/sys/module/cpu_input_boost/parameters/input_boost_duration" "$CPU_IBOOST_DUR"
+    fi
+    if [ -n "${CPU_IBOOST_FREQ:-}" ]; then
+      write "$_S/sys/module/cpu_input_boost/parameters/input_boost_freq_hp" "$CPU_IBOOST_FREQ"
+      write "$_S/sys/module/cpu_input_boost/parameters/input_boost_freq_lp" "$CPU_IBOOST_FREQ"
+    fi
   fi
 
   for _clk in "$_S"/sys/devices/system/cpu/cpufreq/policy*/ "$_S"/sys/devices/system/cpu/cpu*/cpufreq/; do
